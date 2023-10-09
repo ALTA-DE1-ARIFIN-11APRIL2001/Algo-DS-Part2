@@ -1,5 +1,19 @@
 def maximum_buy_product(money, product_price):
-    return 0
+ 
+    product_price.sort()
+
+    maksimal_beli_produk = 0
+    sisa_uang = money
+
+    for harga in product_price:
+
+        if harga <= sisa_uang:
+            maksimal_beli_produk += 1
+            sisa_uang -= harga
+        else:
+            break
+
+    return maksimal_beli_produk
 
 if __name__ == "__main__":
     print(maximum_buy_product(50000, [25000, 25000, 10000, 14000]))      # 3
